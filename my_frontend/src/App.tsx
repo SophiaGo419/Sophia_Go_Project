@@ -144,7 +144,7 @@ const App: React.FC = () => {
               onClick={EmployeehandleCreate}
               className="w-1/2 bg-blue-600 text-white font-semibold py-3 rounded hover:bg-blue-700 transition"
             >
-              Add Employee
+              Add 
             </button>
           </div>
 
