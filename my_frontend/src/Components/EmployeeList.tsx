@@ -25,14 +25,22 @@ const EmployeeList: React.FC<EmployeeProps> = ({ employee, onToggle, onDelete })
   };
 
   const handleSave = (emp: Employee) => {
-    onToggle({
-      ...emp,
-      full_name: editFullName,
-      email: editEmail,
-      role: editRole,
-    });
-    setEditingId(null);
-  };
+  // Simple email validation
+  if (!editEmail.includes("@")) {
+    alert("Please enter a valid email with '@'");
+    return; // stop the save
+  }
+
+  // Proceed if valid
+  onToggle({
+    ...emp,
+    full_name: editFullName,
+    email: editEmail,
+    role: editRole,
+  });
+
+  setEditingId(null);
+};
 
   const handleCancel = () => {
     setEditingId(null);
